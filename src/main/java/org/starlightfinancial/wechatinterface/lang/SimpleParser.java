@@ -51,7 +51,6 @@ public class SimpleParser {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        logger.info("response text:\n" + result);
         return result;
     }
 
@@ -65,7 +64,7 @@ public class SimpleParser {
     public Object toObj(InputStream is) {
         Serializer serializer = new Persister();
         try {
-            Object obj = serializer.read(Object.class, is);
+            Object obj = serializer.read(clazz, is);
             return obj;
         } catch (Exception e) {
             logger.error("post data parse error");

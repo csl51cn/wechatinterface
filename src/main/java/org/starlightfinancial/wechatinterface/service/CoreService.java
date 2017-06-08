@@ -1,6 +1,7 @@
 package org.starlightfinancial.wechatinterface.service;
 
 import org.starlightfinancial.wechatinterface.WechatSupport;
+import org.starlightfinancial.wechatinterface.message.CustomerMsg;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -64,7 +65,9 @@ public class CoreService extends WechatSupport {
 
     @Override
     protected void subscribe() {
-
+        this.responseText("欢迎关注远见保险代理");
+        CustomerMsg customerMsg = new CustomerMsg("oNEhJw5nYXzLXm8u2oP175RqYG2o");
+        customerMsg.sendText("关注");
     }
 
     @Override
@@ -74,7 +77,7 @@ public class CoreService extends WechatSupport {
 
     @Override
     protected void scan() {
-
+        this.responseText("欢迎关注远见保险代理");
     }
 
     @Override

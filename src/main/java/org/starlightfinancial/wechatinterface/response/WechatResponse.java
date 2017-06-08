@@ -1,25 +1,38 @@
 package org.starlightfinancial.wechatinterface.response;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
+
 import java.util.List;
 
 /**
  * Created by sili.chen on 2017/6/7.
  */
+@Root(name = "xml")
 public class WechatResponse {
+    @Element(name = "ToUserName")
     private String ToUserName;
+    @Element(name = "FromUserName")
     private String FromUserName;
+    @Element(name = "CreateTime")
     private String CreateTime;
+    @Element(name = "MsgType")
     private String MsgType;
+    @Element(name = "Content", required = false)
     private String Content;
+    @Element(name = "ArticleCount", required = false)
     private String ArticleCount;
-
+    @Element(name = "Image", required = false)
     private ImageResponse Image;
+    @Element(name = "Voice", required = false)
     private VoiceResponse Voice;
+    @Element(name = "Video", required = false)
     private VideoResponse Video;
+    @Element(name = "Music", required = false)
     private MusicResponse Music;
+    @Element(name = "article", required = false)
     private List<ArticleResponse> article;
+    @Element(name = "TransInfo", required = false)
     private TransInfoResponse TransInfo;
 
     public static String[] CDATA_TAG = {"ToUserName",
@@ -28,7 +41,6 @@ public class WechatResponse {
     };
 
 
-    @XmlElement(name = "ToUserName")
     public String getToUserName() {
         return ToUserName;
     }
@@ -37,7 +49,6 @@ public class WechatResponse {
         ToUserName = toUserName;
     }
 
-    @XmlElement(name = "FromUserName")
     public String getFromUserName() {
         return FromUserName;
     }
@@ -46,7 +57,6 @@ public class WechatResponse {
         FromUserName = fromUserName;
     }
 
-    @XmlElement(name = "CreateTime")
     public String getCreateTime() {
         return CreateTime;
     }
@@ -55,7 +65,6 @@ public class WechatResponse {
         CreateTime = createTime;
     }
 
-    @XmlElement(name = "MsgType")
     public String getMsgType() {
         return MsgType;
     }
@@ -64,7 +73,6 @@ public class WechatResponse {
         MsgType = msgType;
     }
 
-    @XmlElement(name = "Content")
     public String getContent() {
         return Content;
     }
@@ -73,7 +81,6 @@ public class WechatResponse {
         Content = content;
     }
 
-    @XmlElement(name = "ArticleCount")
     public String getArticleCount() {
         return ArticleCount;
     }
@@ -82,7 +89,6 @@ public class WechatResponse {
         ArticleCount = articleCount;
     }
 
-    @XmlElement(name = "Image")
     public ImageResponse getImage() {
         return Image;
     }
@@ -91,7 +97,6 @@ public class WechatResponse {
         Image = image;
     }
 
-    @XmlElement(name = "Voice")
     public VoiceResponse getVoice() {
         return Voice;
     }
@@ -100,7 +105,6 @@ public class WechatResponse {
         Voice = voice;
     }
 
-    @XmlElement(name = "Video")
     public VideoResponse getVideo() {
         return Video;
     }
@@ -109,7 +113,6 @@ public class WechatResponse {
         Video = video;
     }
 
-    @XmlElement(name = "Music")
     public MusicResponse getMusic() {
         return Music;
     }
@@ -118,8 +121,6 @@ public class WechatResponse {
         Music = music;
     }
 
-    @XmlElementWrapper(name = "Articles")
-    @XmlElement(name = "item")
     public List<ArticleResponse> getArticle() {
         return article;
     }
@@ -128,7 +129,6 @@ public class WechatResponse {
         this.article = article;
     }
 
-    @XmlElement(name = "TransInfo")
     public TransInfoResponse getTransInfo() {
         return TransInfo;
     }

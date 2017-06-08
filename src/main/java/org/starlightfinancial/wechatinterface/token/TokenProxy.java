@@ -1,7 +1,6 @@
 package org.starlightfinancial.wechatinterface.token;
 
-import org.starlightfinancial.wechatinterface.token.server.AccessTokenServer;
-import org.starlightfinancial.wechatinterface.token.server.TokenServer;
+import org.starlightfinancial.wechatinterface.token.server.AccessTokenMemServer;
 
 /**
  * AccessToken代理
@@ -14,7 +13,7 @@ public class TokenProxy {
      * 通过代理得到accessToken的串
      */
     public static String accessToken() {
-        TokenServer accessTokenServer = new AccessTokenServer();
-        return accessTokenServer.token();
+        AccessTokenMemServer accessTokenMemServer = AccessTokenMemServer.instance();
+        return accessTokenMemServer.token();
     }
 }

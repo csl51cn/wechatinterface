@@ -1,7 +1,7 @@
 package org.starlightfinancial.wechatinterface.request;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 /**
  * 微信request的对象属性
@@ -9,38 +9,65 @@ import javax.xml.bind.annotation.XmlRootElement;
  * 包括所有类型的节点,若报文中无此属性则解析的时候不会生成本属性
  * Created by sili.chen on 2017/6/7.
  */
-@XmlRootElement(name = "xml")
+@Root(name = "xml")
 public class WechatRequest {
+    @Element(name = "ToUserName", required = false)
     private String ToUserName;
+    @Element(name = "FromUserName", required = false)
     private String FromUserName;
+    @Element(name = "CreateTime", required = false)
     private String CreateTime;
+    @Element(name = "MsgType", required = false)
     private String MsgType;
+    @Element(name = "Event", required = false)
     private String Event;
+    @Element(name = "EventKey", required = false)
     private String EventKey;
+    @Element(name = "MsgId", required = false)
     private String MsgId;
+    @Element(name = "Content", required = false)
     private String Content;
+    @Element(name = "Location_X", required = false)
     private String Location_X;
+    @Element(name = "Location_Y", required = false)
     private String Location_Y;
+    @Element(name = "Scale", required = false)
     private String Scale;
+    @Element(name = "Label", required = false)
     private String Label;
+    @Element(name = "Title", required = false)
     private String Title;
+    @Element(name = "Description", required = false)
     private String Description;
+    @Element(name = "Url", required = false)
     private String Url;
+    @Element(name = "PicUrl", required = false)
     private String PicUrl;
+    @Element(name = "MediaId", required = false)
     private String MediaId;
+    @Element(name = "Format", required = false)
     private String Format;
+    @Element(name = "Status", required = false)
     private String Status;
+    @Element(name = "Latitude", required = false)
     private String Latitude;  //上报地理位置事件Latitude
+    @Element(name = "Longitude", required = false)
     private String Longitude; //上报地理位置事件Longitude
+    @Element(name = "Precision", required = false)
     private String Precision; //上报地理位置事件Precision
+    @Element(name = "Ticket", required = false)
     private String Ticket;    //扫描带参数二维码事件Ticket
+    @Element(name = "ThumbMediaId", required = false)
     private String ThumbMediaId; //视频消息 ThumbMediaId 视频消息缩略图的媒体id，可以调用多媒体文件下载接口拉取数据
+    @Element(name = "ScanCodeInfo", required = false)
     private ScanCodeInfo ScanCodeInfo; //扫描信息
+    @Element(name = "SendPicsInfo", required = false)
     private SendPicsInfo SendPicsInfo; //发送的图片信息
+    @Element(name = "SendLocationInfo", required = false)
     private SendLocationInfo SendLocationInfo;   //发送的位置信息
+    @Element(name = "Recognition", required = false)
     private String Recognition;
 
-    @XmlElement(name = "Recognition")
     public String getRecognition() {
         return Recognition;
     }
@@ -49,7 +76,6 @@ public class WechatRequest {
         Recognition = recognition;
     }
 
-    @XmlElement(name = "Format")
     public String getFormat() {
         return Format;
     }
@@ -58,7 +84,6 @@ public class WechatRequest {
         Format = format;
     }
 
-    @XmlElement(name = "PicUrl")
     public String getPicUrl() {
         return PicUrl;
     }
@@ -67,7 +92,6 @@ public class WechatRequest {
         PicUrl = picUrl;
     }
 
-    @XmlElement(name = "MediaId")
     public String getMediaId() {
         return MediaId;
     }
@@ -76,7 +100,6 @@ public class WechatRequest {
         MediaId = mediaId;
     }
 
-    @XmlElement(name = "Title")
     public String getTitle() {
         return Title;
     }
@@ -85,7 +108,6 @@ public class WechatRequest {
         Title = title;
     }
 
-    @XmlElement(name = "Description")
     public String getDescription() {
         return Description;
     }
@@ -94,7 +116,6 @@ public class WechatRequest {
         Description = description;
     }
 
-    @XmlElement(name = "Url")
     public String getUrl() {
         return Url;
     }
@@ -103,7 +124,6 @@ public class WechatRequest {
         Url = url;
     }
 
-    @XmlElement(name = "Location_X")
     public String getLocation_X() {
         return Location_X;
     }
@@ -112,7 +132,6 @@ public class WechatRequest {
         Location_X = location_X;
     }
 
-    @XmlElement(name = "Location_Y")
     public String getLocation_Y() {
         return Location_Y;
     }
@@ -121,7 +140,6 @@ public class WechatRequest {
         Location_Y = location_Y;
     }
 
-    @XmlElement(name = "Scale")
     public String getScale() {
         return Scale;
     }
@@ -130,7 +148,6 @@ public class WechatRequest {
         Scale = scale;
     }
 
-    @XmlElement(name = "Label")
     public String getLabel() {
         return Label;
     }
@@ -139,7 +156,6 @@ public class WechatRequest {
         Label = label;
     }
 
-    @XmlElement(name = "MsgId")
     public String getMsgId() {
         return MsgId;
     }
@@ -148,7 +164,6 @@ public class WechatRequest {
         MsgId = msgId;
     }
 
-    @XmlElement(name = "ToUserName")
     public String getToUserName() {
         return ToUserName;
     }
@@ -157,7 +172,6 @@ public class WechatRequest {
         ToUserName = toUserName;
     }
 
-    @XmlElement(name = "FromUserName")
     public String getFromUserName() {
         return FromUserName;
     }
@@ -166,7 +180,6 @@ public class WechatRequest {
         FromUserName = fromUserName;
     }
 
-    @XmlElement(name = "CreateTime")
     public String getCreateTime() {
         return CreateTime;
     }
@@ -175,7 +188,6 @@ public class WechatRequest {
         CreateTime = createTime;
     }
 
-    @XmlElement(name = "MsgType")
     public String getMsgType() {
         return MsgType;
     }
@@ -184,7 +196,6 @@ public class WechatRequest {
         MsgType = msgType;
     }
 
-    @XmlElement(name = "Event")
     public String getEvent() {
         return Event;
     }
@@ -193,7 +204,6 @@ public class WechatRequest {
         Event = event;
     }
 
-    @XmlElement(name = "EventKey")
     public String getEventKey() {
         return EventKey;
     }
@@ -202,7 +212,6 @@ public class WechatRequest {
         EventKey = eventKey;
     }
 
-    @XmlElement(name = "Content")
     public String getContent() {
         return Content;
     }
@@ -211,7 +220,6 @@ public class WechatRequest {
         Content = content;
     }
 
-    @XmlElement(name = "Status")
     public String getStatus() {
         return Status;
     }
@@ -220,7 +228,6 @@ public class WechatRequest {
         Status = status;
     }
 
-    @XmlElement(name = "Latitude")
     public String getLatitude() {
         return Latitude;
     }
@@ -229,7 +236,6 @@ public class WechatRequest {
         Latitude = latitude;
     }
 
-    @XmlElement(name = "Longitude")
     public String getLongitude() {
         return Longitude;
     }
@@ -238,7 +244,6 @@ public class WechatRequest {
         Longitude = longitude;
     }
 
-    @XmlElement(name = "Precision")
     public String getPrecision() {
         return Precision;
     }
@@ -247,7 +252,6 @@ public class WechatRequest {
         Precision = precision;
     }
 
-    @XmlElement(name = "Ticket")
     public String getTicket() {
         return Ticket;
     }
@@ -256,7 +260,6 @@ public class WechatRequest {
         Ticket = ticket;
     }
 
-    @XmlElement(name = "ThumbMediaId")
     public String getThumbMediaId() {
         return ThumbMediaId;
     }
@@ -265,7 +268,6 @@ public class WechatRequest {
         ThumbMediaId = thumbMediaId;
     }
 
-    @XmlElement(name = "ScanCodeInfo")
     public ScanCodeInfo getScanCodeInfo() {
         return ScanCodeInfo;
     }
@@ -274,7 +276,6 @@ public class WechatRequest {
         ScanCodeInfo = scanCodeInfo;
     }
 
-    @XmlElement(name = "SendPicsInfo")
     public SendPicsInfo getSendPicsInfo() {
         return SendPicsInfo;
     }
@@ -283,7 +284,6 @@ public class WechatRequest {
         SendPicsInfo = sendPicsInfo;
     }
 
-    @XmlElement(name = "SendLocationInfo")
     public SendLocationInfo getSendLocationInfo() {
         return SendLocationInfo;
     }
